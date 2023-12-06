@@ -14,10 +14,10 @@ impl Race {
     ///
     /// time / 2 +- sqrt(time^2 - 4 * distance) / 2
     fn calc_wins(&self) -> f64 {
-        let peak = self.time / 2.0;
-        let discr = self.time.powf(2.0) - 4.0 * self.distance;
-        let high = peak + discr.sqrt() / 2.0;
-        let low = peak - discr.sqrt() / 2.0;
+        let half_time = self.time / 2.0;
+        let discriminant = self.time.powf(2.0) - 4.0 * self.distance;
+        let high = half_time + discriminant.sqrt() / 2.0;
+        let low = half_time - discriminant.sqrt() / 2.0;
         high.ceil() - low.floor() - 1.0
     }
 }
