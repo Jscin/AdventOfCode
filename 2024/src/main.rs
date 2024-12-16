@@ -20,6 +20,7 @@ fn main() {
     match matches.get_one::<String>("day").map(|s| s.as_str()) {
         Some("1") => day1::run(),
         Some("2") => day2::run(),
+        Some("3") => day3::run(),
         _ => eprintln!("Invalid day specified. Please choose 1 or 2."),
     }
 }
