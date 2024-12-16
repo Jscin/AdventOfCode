@@ -4,7 +4,7 @@ use std::fs;
 
 lazy_static! {
     static ref NUM_MAP: HashMap<&'static str, i32> = {
-        let m = HashMap::from([
+        HashMap::from([
             ("zero", 0),
             ("one", 1),
             ("two", 2),
@@ -15,8 +15,7 @@ lazy_static! {
             ("seven", 7),
             ("eight", 8),
             ("nine", 9),
-        ]);
-        m
+        ])
     };
 }
 
@@ -25,14 +24,14 @@ fn extract_numbers_part_one(input: Vec<&str>) -> i32 {
     for str in input {
         let mut result = String::new();
         for c in str.chars() {
-            if c.is_digit(10) {
+            if c.is_ascii_digit() {
                 result.push(c);
                 break;
             }
         }
 
         for c in str.chars().rev() {
-            if c.is_digit(10) {
+            if c.is_ascii_digit() {
                 result.push(c);
                 break;
             }
@@ -129,7 +128,7 @@ fn extract_numbers_part_two(input: Vec<&str>) -> i32 {
     sum
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("input.txt").expect("Something went wrong reading the file");
     let input = input.split("\n").collect::<Vec<&str>>();
     let res1 = extract_numbers_part_one(input.clone());
