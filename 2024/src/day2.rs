@@ -65,9 +65,9 @@ fn part_two(input: &str) -> u64 {
 
 pub fn run() {
     let input = fs::read_to_string("input/day2.txt").unwrap();
-    let ans = part_one(input.as_str());
+    let ans = part_one(&input);
     println!("Part 1: {}", ans);
-    let ans = part_two(input.as_str());
+    let ans = part_two(&input);
     println!("Part 2: {}", ans);
 }
 
