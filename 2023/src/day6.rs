@@ -52,8 +52,8 @@ fn parse_input_p2(contents: &str) -> Vec<f64> {
         .collect::<Vec<f64>>()
 }
 
-fn part_one(contents: &str) -> () {
-    let contents = parse_input_p1(&contents);
+fn part_one(contents: &str) {
+    let contents = parse_input_p1(contents);
     let (time, distance) = (&contents[0], &contents[1]);
 
     let races = time
@@ -76,13 +76,13 @@ fn part_one(contents: &str) -> () {
 }
 
 fn part_two(contents: &str) {
-    let contents = parse_input_p2(&contents);
+    let contents = parse_input_p2(contents);
     let (time, distance) = (&contents[0], &contents[1]);
 
     let race = Race::new(*distance, *time);
 
     let mut span: Vec<f64> = Vec::new();
-    span.push(race.calc_wins());
+    Vec::push(&mut span, race.calc_wins());
     let mut results = 1.0;
     for i in span {
         results *= i;
@@ -91,7 +91,7 @@ fn part_two(contents: &str) {
     println!("{}", results);
 }
 
-fn main() -> Result<(), Box<dyn Error>> {
+pub fn run() -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string("input.txt")?;
     part_one(&contents);
     part_two(&contents);

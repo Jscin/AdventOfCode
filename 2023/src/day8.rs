@@ -67,7 +67,7 @@ fn part_two(map: HashMap<String, (String, String)>, instructions: Vec<Instructio
     sum
 }
 
-fn main() {
+pub fn run() {
     let contents = fs::read_to_string("input.txt").expect("Something went wrong reading the file");
     let mut map: HashMap<String, (String, String)> = HashMap::new();
     let split_contents = contents.split_once('\n').unwrap();

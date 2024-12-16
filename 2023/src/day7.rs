@@ -57,7 +57,7 @@ impl Card {
     }
 }
 
-fn main() {
+pub fn run() {
     let contents = fs::read_to_string("ex.txt").expect("Something went wrong reading the file");
 
     let cards = contents
@@ -87,7 +87,11 @@ fn main() {
         }
         if hand_count == 1 {
             rank = 1;
-        } else if hand_count > 1 {
+        } else {
+            match hand_count > 1 {
+                true => {}
+                false => (),
+            }
         }
     }
 }

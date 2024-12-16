@@ -120,7 +120,8 @@ fn part_two(input: Vec<&str>) -> u32 {
     }
     sum
 }
-fn main() {
+
+pub fn run() {
     let input = fs::read_to_string("input.txt").expect("Something went wrong reading the file");
     let input: Vec<&str> = input.lines().collect();
 

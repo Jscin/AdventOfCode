@@ -48,7 +48,7 @@ fn part_one(input: Vec<&str>) -> u32 {
     total_points
 }
 
-fn main() {
+pub fn run() {
     let input = fs::read_to_string("input.txt").unwrap();
     let input: Vec<&str> = input.split("\n").collect();
 
