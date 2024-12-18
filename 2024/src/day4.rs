@@ -130,7 +130,6 @@ pub fn run() {
 #[cfg(test)]
 mod tests {
     use super::*;
-
     const INPUT: &str = "MMMSXXMASM\nMSAMXMSMSA\nAMXSXMAAMM\nMSAMASMSMX\nXMASAMXAMM\nXXAMMXXAMA\nSMSMSASXSS\nSAXAMASAAA\nMAMMMXMMMM\nMXMXAXMASX";
 
     #[test]

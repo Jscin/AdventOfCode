@@ -22,6 +22,7 @@ fn main() {
         Some("2") => day2::run(),
         Some("3") => day3::run(),
         Some("4") => day4::run(),
+        Some("5") => day5::run(),
         _ => eprintln!("Invalid day specified. Please choose 1 or 2."),
     }
 }
